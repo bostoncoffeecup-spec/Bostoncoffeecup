@@ -14,8 +14,8 @@ async function loadData() {
       fetch('data/beans.json'),
       fetch('data/quiz.json')
     ]);
-    CAFES = await cafesRes.json();
-    BEANS = await beansRes.json();
+    CAFES = (await cafesRes.json()).items;
+    BEANS = (await beansRes.json()).items;
     QUIZ_QUESTIONS = await quizRes.json();
 
     initUI();
