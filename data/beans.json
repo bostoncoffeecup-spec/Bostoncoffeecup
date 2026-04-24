@@ -1,146 +1,196 @@
-{ "items":[
-  {
-    "id": "stumptown-hairbender",
-    "name": "Hair Bender",
-    "roaster": "Stumptown Coffee",
-    "roast": "Medium",
-    "acidity": 3,
-    "body": 4,
-    "notes": ["Chocolate", "Citrus", "Jasmine"],
-    "origin": "Blend",
-    "price": "$19",
-    "url": "https://www.stumptowncoffee.com/products/hair-bender"
-  },
-  {
-    "id": "bluebottle-threeafrica",
-    "name": "Three Africas",
-    "roaster": "Blue Bottle Coffee",
-    "roast": "Light-medium",
-    "acidity": 4,
-    "body": 3,
-    "notes": ["Berry", "Floral", "Cocoa"],
-    "origin": "Blend",
-    "price": "$21",
-    "url": "https://bluebottlecoffee.com/us/eng/collection/whole-bean-coffee"
-  },
-  {
-    "id": "verve-streetlevel",
-    "name": "Street Level Espresso",
-    "roaster": "Verve Coffee Roasters",
-    "roast": "Medium",
-    "acidity": 3,
-    "body": 4,
-    "notes": ["Milk chocolate", "Almond", "Brown sugar"],
-    "origin": "Blend",
-    "price": "$20",
-    "url": "https://www.vervecoffee.com/collections/coffee"
-  },
-  {
-    "id": "bluestone-houseblend",
-    "name": "House Blend",
-    "roaster": "Bluestone Lane",
-    "roast": "Medium-dark",
-    "acidity": 2,
-    "body": 5,
-    "notes": ["Dark chocolate", "Hazelnut", "Caramel"],
-    "origin": "Blend",
-    "price": "$18",
-    "url": "https://bluestonelane.com/collections/coffee"
-  },
-  {
-    "id": "pavement-boylston",
-    "name": "Boylston Blend",
-    "roaster": "Pavement",
-    "roast": "Medium",
-    "acidity": 3,
-    "body": 4,
-    "notes": ["Chocolate", "Toasted nut", "Cherry"],
-    "origin": "Blend",
-    "price": "$17",
-    "url": "https://pavementcoffeehouse.com/collections/coffee"
-  },
-  {
-    "id": "landwer-blend",
-    "name": "Landwer Classic",
-    "roaster": "Landwer Coffee",
-    "roast": "Dark",
-    "acidity": 1,
-    "body": 5,
-    "notes": ["Dark chocolate", "Smoke", "Cardamom"],
-    "origin": "Blend",
-    "price": "$16",
-    "url": "https://landwercafe.com"
-  },
-  {
-    "id": "ghc-terroir",
-    "name": "Terroir Espresso",
-    "roaster": "George Howell Coffee",
-    "roast": "Light-medium",
-    "acidity": 4,
-    "body": 3,
-    "notes": ["Stone fruit", "Honey", "Cocoa"],
-    "origin": "Blend",
-    "price": "$23",
-    "url": "https://georgehowellcoffee.com/collections/coffee"
-  },
-  {
-    "id": "ghc-ethiopia",
-    "name": "Ethiopia Yirgacheffe",
-    "roaster": "George Howell Coffee",
-    "roast": "Light",
-    "acidity": 5,
-    "body": 2,
-    "notes": ["Blueberry", "Lemon", "Jasmine"],
-    "origin": "Ethiopia",
-    "price": "$24",
-    "url": "https://georgehowellcoffee.com/collections/coffee"
-  },
-  {
-    "id": "stumptown-frenchroast",
-    "name": "French Roast",
-    "roaster": "Stumptown Coffee",
-    "roast": "Dark",
-    "acidity": 1,
-    "body": 5,
-    "notes": ["Dark chocolate", "Smoke", "Toast"],
-    "origin": "Blend",
-    "price": "$17",
-    "url": "https://www.stumptowncoffee.com/collections/coffee"
-  },
-  {
-    "id": "centralperk-house",
-    "name": "Central Perk Blend",
-    "roaster": "Central Perk",
-    "roast": "Medium",
-    "acidity": 3,
-    "body": 3,
-    "notes": ["Chocolate", "Caramel", "Nut"],
-    "origin": "Blend",
-    "price": "$15",
-    "url": "https://centralperk.com/collections/coffee"
-  },
-  {
-    "id": "bluebottle-bellacatrice",
-    "name": "Bella Donovan",
-    "roaster": "Blue Bottle Coffee",
-    "roast": "Medium",
-    "acidity": 3,
-    "body": 4,
-    "notes": ["Chocolate", "Fig", "Berry"],
-    "origin": "Blend",
-    "price": "$20",
-    "url": "https://bluebottlecoffee.com/us/eng/collection/whole-bean-coffee"
-  },
-  {
-    "id": "verve-colombia",
-    "name": "Colombia Las Flores",
-    "roaster": "Verve Coffee Roasters",
-    "roast": "Light-medium",
-    "acidity": 4,
-    "body": 3,
-    "notes": ["Peach", "Honey", "Floral"],
-    "origin": "Colombia",
-    "price": "$22",
-    "url": "https://www.vervecoffee.com/collections/coffee"
-  }
-]}
+{
+  "items": [
+    {
+      "notes": [
+        "Chocolate",
+        "Citrus",
+        "Jasmine"
+      ],
+      "body": 4,
+      "roast": "Medium",
+      "origin": "Blend",
+      "price": "$19",
+      "name": "Hair Bender",
+      "url": "https://www.stumptowncoffee.com/products/hair-bender",
+      "acidity": 3,
+      "roaster": "Stumptown Coffee",
+      "id": "stumptown-hairbender"
+    },
+    {
+      "notes": [
+        "Berry",
+        "Floral",
+        "Cocoa"
+      ],
+      "body": 3,
+      "roast": "Light-medium",
+      "origin": "Blend",
+      "price": "$21",
+      "name": "Three Africas",
+      "url": "https://bluebottlecoffee.com/us/eng/collection/whole-bean-coffee",
+      "acidity": 4,
+      "roaster": "Blue Bottle Coffee",
+      "id": "bluebottle-threeafrica"
+    },
+    {
+      "notes": [
+        "Milk chocolate",
+        "Almond",
+        "Brown sugar"
+      ],
+      "body": 4,
+      "roast": "Medium",
+      "origin": "Blend",
+      "price": "$20",
+      "name": "Street Level Espresso",
+      "url": "https://www.vervecoffee.com/collections/coffee",
+      "acidity": 3,
+      "roaster": "Verve Coffee Roasters",
+      "id": "verve-streetlevel"
+    },
+    {
+      "notes": [
+        "Dark chocolate",
+        "Hazelnut",
+        "Caramel"
+      ],
+      "body": 5,
+      "roast": "Medium-dark",
+      "origin": "Blend",
+      "price": "$18",
+      "name": "House Blend",
+      "url": "https://bluestonelane.com/collections/coffee",
+      "acidity": 2,
+      "roaster": "Bluestone Lane",
+      "id": "bluestone-houseblend"
+    },
+    {
+      "notes": [
+        "Chocolate",
+        "Toasted nut",
+        "Cherry"
+      ],
+      "body": 4,
+      "roast": "Medium",
+      "origin": "Blend",
+      "price": "$17",
+      "name": "Boylston Blend",
+      "url": "https://pavementcoffeehouse.com/collections/coffee",
+      "acidity": 3,
+      "roaster": "Pavement",
+      "id": "pavement-boylston"
+    },
+    {
+      "notes": [
+        "Dark chocolate",
+        "Smoke",
+        "Cardamom"
+      ],
+      "body": 5,
+      "roast": "Dark",
+      "origin": "Blend",
+      "price": "$16",
+      "name": "Landwer Classic",
+      "url": "https://landwercafe.com",
+      "acidity": 1,
+      "roaster": "Landwer Coffee",
+      "id": "landwer-blend"
+    },
+    {
+      "notes": [
+        "Stone fruit",
+        "Honey",
+        "Cocoa"
+      ],
+      "body": 3,
+      "roast": "Light-medium",
+      "origin": "Blend",
+      "price": "$23",
+      "name": "Terroir Espresso",
+      "url": "https://georgehowellcoffee.com/collections/all-coffee",
+      "acidity": 4,
+      "roaster": "George Howell Coffee",
+      "id": "ghc-terroir"
+    },
+    {
+      "notes": [
+        "Blueberry",
+        "Lemon",
+        "Jasmine"
+      ],
+      "body": 2,
+      "roast": "Light",
+      "origin": "Ethiopia",
+      "price": "$24",
+      "name": "Ethiopia Yirgacheffe",
+      "url": "https://georgehowellcoffee.com/collections/coffee",
+      "acidity": 5,
+      "roaster": "George Howell Coffee",
+      "id": "ghc-ethiopia"
+    },
+    {
+      "notes": [
+        "Dark chocolate",
+        "Smoke",
+        "Toast"
+      ],
+      "body": 5,
+      "roast": "Dark",
+      "origin": "Blend",
+      "price": "$17",
+      "name": "French Roast",
+      "url": "https://www.stumptowncoffee.com/collections/coffee",
+      "acidity": 1,
+      "roaster": "Stumptown Coffee",
+      "id": "stumptown-frenchroast"
+    },
+    {
+      "notes": [
+        "Chocolate",
+        "Caramel",
+        "Nut"
+      ],
+      "body": 3,
+      "roast": "Medium",
+      "origin": "Blend",
+      "price": "$15",
+      "name": "Central Perk Blend",
+      "url": "https://centralperk.com/collections/coffee",
+      "acidity": 3,
+      "roaster": "Central Perk",
+      "id": "centralperk-house"
+    },
+    {
+      "notes": [
+        "Chocolate",
+        "Fig",
+        "Berry"
+      ],
+      "body": 4,
+      "roast": "Medium",
+      "origin": "Blend",
+      "price": "$20",
+      "name": "Bella Donovan",
+      "url": "https://bluebottlecoffee.com/us/eng/collection/whole-bean-coffee",
+      "acidity": 3,
+      "roaster": "Blue Bottle Coffee",
+      "id": "bluebottle-bellacatrice"
+    },
+    {
+      "notes": [
+        "Peach",
+        "Honey",
+        "Floral"
+      ],
+      "body": 3,
+      "roast": "Light-medium",
+      "origin": "Colombia",
+      "price": "$22",
+      "name": "Colombia Las Flores",
+      "url": "https://www.vervecoffee.com/collections/coffee",
+      "acidity": 4,
+      "roaster": "Verve Coffee Roasters",
+      "id": "verve-colombia"
+    }
+  ]
+}
