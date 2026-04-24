@@ -1,0 +1,82 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "cafes"
+    label: "Cafés"
+    label_singular: "Café"
+    files:
+      - file: "data/cafes.json"
+        label: "All Cafés"
+        name: "cafes"
+        fields:
+          - label: "Cafés"
+            name: "cafes"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.hood}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Neighborhood", name: "hood", widget: "string", hint: "e.g. Back Bay, Harvard Square, Fenway" }
+              - { label: "Address", name: "address", widget: "string" }
+              - { label: "Latitude", name: "lat", widget: "number", value_type: "float", step: 0.0001, hint: "From Google Maps — right-click a location, the numbers shown" }
+              - { label: "Longitude", name: "lng", widget: "number", value_type: "float", step: 0.0001 }
+              - { label: "Price", name: "price", widget: "select", options: ["$", "$$", "$$$"] }
+              - { label: "Coffee rating", name: "coffee", widget: "number", min: 1, max: 5, step: 1, hint: "1-5 stars" }
+              - { label: "Vibe rating", name: "vibe", widget: "number", min: 1, max: 5, step: 1 }
+              - { label: "Value rating", name: "value", widget: "number", min: 1, max: 5, step: 1 }
+              - { label: "Review", name: "review", widget: "text", hint: "1-3 sentences. Be honest and specific." }
+              - { label: "Drinks you tried", name: "drinks", widget: "list", field: { label: "Drink", name: "drink", widget: "string" } }
+              - { label: "Roaster", name: "roaster", widget: "string", hint: "Who roasts their coffee" }
+              - { label: "Bean ID", name: "beanId", widget: "string", required: false, hint: "Links café to a bean in the catalog (matches an id from beans.json)" }
+
+  - name: "beans"
+    label: "Beans"
+    label_singular: "Bean"
+    files:
+      - file: "data/beans.json"
+        label: "All Beans"
+        name: "beans"
+        fields:
+          - label: "Beans"
+            name: "beans"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.roaster}}"
+            fields:
+              - { label: "Bean ID", name: "id", widget: "string", hint: "Unique slug, e.g. 'stumptown-hairbender'" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Roaster", name: "roaster", widget: "string" }
+              - { label: "Roast", name: "roast", widget: "select", options: ["Light", "Light-medium", "Medium", "Medium-dark", "Dark"] }
+              - { label: "Acidity", name: "acidity", widget: "number", min: 1, max: 5, step: 1, hint: "1 = mellow, 5 = bright/punchy" }
+              - { label: "Body", name: "body", widget: "number", min: 1, max: 5, step: 1, hint: "1 = light, 5 = full/syrupy" }
+              - { label: "Tasting notes", name: "notes", widget: "list", field: { label: "Note", name: "note", widget: "string" }, hint: "e.g. Chocolate, Citrus, Jasmine" }
+              - { label: "Origin", name: "origin", widget: "string", hint: "Country, region, or 'Blend'" }
+              - { label: "Price", name: "price", widget: "string", hint: "e.g. $19" }
+              - { label: "Buy URL", name: "url", widget: "string", hint: "Where to buy (affiliate link)" }
+
+  - name: "quiz"
+    label: "Quiz"
+    files:
+      - file: "data/quiz.json"
+        label: "Taste Quiz Questions"
+        name: "quiz"
+        fields:
+          - label: "Questions"
+            name: "questions"
+            widget: "list"
+            summary: "{{fields.question}}"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - label: "Options"
+                name: "options"
+                widget: "list"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Label (shown to user)", name: "label", widget: "string" }
+                  - { label: "Acidity preference", name: "acidity", widget: "select", options: ["", "high", "mid", "low"], required: false }
+                  - { label: "Body preference", name: "body", widget: "select", options: ["", "high", "mid", "low"], required: false }
+                  - { label: "Matching notes", name: "notes", widget: "list", required: false, field: { label: "Note keyword", name: "note", widget: "string" } }
+                  - { label: "Matching roasts", name: "roast", widget: "list", required: false, field: { label: "Roast", name: "roast", widget: "string" } }
