@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chompi's Coffee Cup — Boston coffee, reviewed</title>
+  <meta name="description" content="A personal guide to Boston's best coffee shops — honest reviews, and the beans to recreate them at home." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Chompi's Coffee Cup" />
+  <meta property="og:description" content="Boston coffee, reviewed. Plus the beans to brew them at home." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts: Fraunces (display serif with character), Inter Tight (clean body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Leaflet map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Paper texture overlay -->
+  <div class="paper-texture" aria-hidden="true"></div>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="#top" class="nav-logo">
+      <span class="nav-logo-mark">☕</span>
+      <span class="nav-logo-text">Chompi's<br/><em>Coffee Cup</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="#cafes">Cafés</a>
+      <a href="#map">Map</a>
+      <a href="#beans">Beans</a>
+      <a href="#quiz" class="nav-cta">Find your beans ↗</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="top">
+    <div class="hero-tag">Boston, MA · A personal coffee diary</div>
+    <h1 class="hero-title">
+      Every cup <em>tells</em> a <span class="hero-underline">story.</span>
+    </h1>
+    <p class="hero-sub">
+      A personal guide to Boston's best coffee — honest reviews, the roasters behind them, and the exact beans to recreate the magic at home.
+    </p>
+    <div class="hero-ctas">
+      <a href="#quiz" class="btn btn-primary">Find my beans</a>
+      <a href="#cafes" class="btn btn-ghost">Browse cafés</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num" id="stat-cafes">—</span><span class="stat-label">Cafés reviewed</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num" id="stat-roasters">—</span><span class="stat-label">Roasters</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num" id="stat-beans">—</span><span class="stat-label">Beans</span></div>
+    </div>
+  </header>
+
+  <!-- Map -->
+  <section class="map-section" id="map">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Section one</p>
+        <h2 class="section-title">The Boston map</h2>
+      </div>
+      <p class="section-desc">Every café I've reviewed, pinned. Click a pin to read about it.</p>
+    </div>
+    <div id="leaflet-map" class="leaflet-wrap"></div>
+  </section>
+
+  <!-- Cafés -->
+  <section class="cafes-section" id="cafes">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Section two</p>
+        <h2 class="section-title">The cafés</h2>
+      </div>
+      <div class="filters">
+        <label>
+          <span class="filter-label">Neighborhood</span>
+          <select id="hood-filter"></select>
+        </label>
+      </div>
+    </div>
+    <div id="cafe-grid" class="cafe-grid"></div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="quiz-section" id="quiz">
+    <div class="quiz-card">
+      <p class="eyebrow">Section three</p>
+      <h2 class="section-title">Find your beans</h2>
+      <p class="quiz-desc">Five quick questions. I'll match you to beans from the roasters behind Boston's best cafés.</p>
+
+      <div id="quiz-start">
+        <button class="btn btn-primary btn-large" onclick="startQuiz()">Start the quiz →</button>
+      </div>
+
+      <div id="quiz-body" style="display:none"></div>
+      <div id="quiz-results" style="display:none"></div>
+    </div>
+  </section>
+
+  <!-- Beans -->
+  <section class="beans-section" id="beans">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Section four</p>
+        <h2 class="section-title">The bean catalog</h2>
+      </div>
+      <p class="section-desc">The roasters behind every café, with tasting notes and shop links.</p>
+    </div>
+    <div id="bean-grid" class="bean-grid"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-title">Chompi's Coffee Cup</p>
+        <p class="footer-sub">Made with ☕ in Boston.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#cafes">Cafés</a>
+        <a href="#beans">Beans</a>
+        <a href="#quiz">Quiz</a>
+        <a href="/admin/" target="_blank">Admin</a>
+      </div>
+    </div>
+    <p class="footer-disclosure">Some bean links are affiliate links — if you buy, I may earn a small commission at no cost to you. All opinions are my own.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
