@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Your ideal morning coffee is…",
+    "options": [
+      { "label": "Bright and crisp — wake me up", "acidity": "high", "body": "low" },
+      { "label": "Balanced and smooth — the classic", "acidity": "mid", "body": "mid" },
+      { "label": "Rich and comforting — a warm hug", "acidity": "low", "body": "high" }
+    ]
+  },
+  {
+    "question": "Which tasting notes pull you in?",
+    "options": [
+      { "label": "Fruit and flowers — berry, citrus, jasmine", "notes": ["berry", "citrus", "floral", "jasmine", "blueberry", "lemon", "fruit", "peach", "cherry", "fig"] },
+      { "label": "Chocolate and caramel — cozy and sweet", "notes": ["chocolate", "caramel", "cocoa", "brown sugar", "honey"] },
+      { "label": "Nuts and toast — warm and grounded", "notes": ["nut", "almond", "hazelnut", "toast", "smoke"] }
+    ]
+  },
+  {
+    "question": "How do you usually drink it?",
+    "options": [
+      { "label": "Black or straight espresso", "body": "high" },
+      { "label": "With a splash of milk", "body": "mid" },
+      { "label": "Latte, cappuccino, lots of milk", "body": "high", "acidity": "low" }
+    ]
+  },
+  {
+    "question": "Roast level preference?",
+    "options": [
+      { "label": "Light — I want to taste the origin", "roast": ["Light", "Light-medium"] },
+      { "label": "Medium — the sweet spot", "roast": ["Medium", "Light-medium", "Medium-dark"] },
+      { "label": "Dark — bold and bittersweet", "roast": ["Dark", "Medium-dark"] }
+    ]
+  },
+  {
+    "question": "Are you adventurous or loyal?",
+    "options": [
+      { "label": "Surprise me — something new every bag", "acidity": "high" },
+      { "label": "I have a type and I stick to it", "acidity": "mid", "body": "mid" },
+      { "label": "Give me the reliable classic", "body": "mid" }
+    ]
+  }
+]
