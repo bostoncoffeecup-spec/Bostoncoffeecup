@@ -1,4 +1,4 @@
-[
+{ "items":[
   {
     "id": "stumptown-hairbender",
     "name": "Hair Bender",
@@ -143,4 +143,4 @@
     "price": "$22",
     "url": "https://www.vervecoffee.com/collections/coffee"
   }
-]
+]}
