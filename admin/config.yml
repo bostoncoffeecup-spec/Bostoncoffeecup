@@ -8,18 +8,10 @@ public_folder: "/images/uploads"
 collections:
   - name: "cafes"
     label: "Cafés"
-    label_singular: "Café"
-    identifier_field: "name"
-    folder: "data"
-    path: "cafes"
-    extension: "json"
-    format: "json"
-    create: false
     files:
       - file: "data/cafes.json"
         label: "Cafés list"
-        name: "cafes_list"
-        format: "json"
+        name: "cafes"
         fields:
           - label: "Cafés"
             name: "items"
@@ -42,13 +34,10 @@ collections:
 
   - name: "beans"
     label: "Beans"
-    label_singular: "Bean"
-    identifier_field: "name"
     files:
       - file: "data/beans.json"
         label: "Beans list"
-        name: "beans_list"
-        format: "json"
+        name: "beans"
         fields:
           - label: "Beans"
             name: "items"
