@@ -138,7 +138,6 @@ function renderBeans(highlightId = null) {
       </div>
       <p class="bean-notes">Notes: <strong>${(b.notes || []).join(', ')}</strong></p>
       <div class="bean-foot">
-        <button class="btn-sm" onclick="showSimilar('${b.id}')">Similar beans</button>
         <a href="${b.url}" target="_blank" rel="noopener" class="btn-buy">Buy ↗</a>
       </div>
     </article>
@@ -156,59 +155,6 @@ function viewBean(beanId) {
 }
 
 // ============================================
-// Similar beans (rules-based matcher)
-// ============================================
-function similarityScore(target, candidate) {
-  if (target.id === candidate.id) return -Infinity;
-  let score = 0;
-  // Roast level proximity
-  score += (candidate.roast === target.roast) ? 4 : 0;
-  // Acidity & body closeness (max 5 points each)
-  score += 5 - Math.abs(candidate.acidity - target.acidity);
-  score += 5 - Math.abs(candidate.body - target.body);
-  // Shared tasting notes (3 points per shared note)
-  const shared = (candidate.notes || []).filter(n => (target.notes || []).includes(n));
-  score += shared.length * 3;
-  return score;
-}
-
-function showSimilar(beanId) {
-  const target = BEANS.find(b => b.id === beanId);
-  if (!target) return;
-
-  const similar = BEANS
-    .map(b => ({ bean: b, score: similarityScore(target, b) }))
-    .filter(s => s.score > -Infinity)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 3);
-
-  const modal = document.createElement('div');
-  modal.className = 'modal-overlay';
-  modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
-  modal.innerHTML = `
-    <div class="modal">
-      <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">×</button>
-      <p class="eyebrow">Similar to</p>
-      <h3 style="font-family: var(--font-display); font-size: 24px; font-weight: 500; margin: 0 0 1.5rem;">${target.name}</h3>
-      ${similar.map(s => `
-        <div style="padding: 1rem 0; border-top: 1px solid var(--line);">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
-            <div>
-              <p class="bean-roaster" style="margin: 0 0 2px;">${s.bean.roaster}</p>
-              <p class="bean-name" style="margin: 0;">${s.bean.name}</p>
-            </div>
-            <span class="bean-price">${s.bean.price}</span>
-          </div>
-          <p class="bean-notes" style="margin: 6px 0 10px;">${s.bean.roast} · ${(s.bean.notes || []).join(', ')}</p>
-          <a href="${s.bean.url}" target="_blank" rel="noopener" class="btn-buy">Buy ↗</a>
-        </div>
-      `).join('')}
-    </div>
-  `;
-  document.body.appendChild(modal);
-}
-
-// ============================================
 // Map
 // ============================================
 function initMap() {
@@ -217,7 +163,6 @@ function initMap() {
     scrollWheelZoom: false
   }).setView([42.350, -71.085], 13);
 
-  // Clean, warm map tiles (Stadia Alidade Smooth — free for non-commercial, fallback to Carto)
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     attribution: '© OpenStreetMap contributors © CARTO',
     subdomains: 'abcd',
@@ -247,12 +192,10 @@ function initMap() {
     pins.push([c.lat, c.lng]);
   });
 
-  // Fit bounds to all pins
   if (pins.length > 0) {
     map.fitBounds(pins, { padding: [40, 40] });
   }
 
-  // Re-enable scroll-wheel zoom on click (better UX)
   map.on('click', () => map.scrollWheelZoom.enable());
 }
 
@@ -305,23 +248,19 @@ function showQuizResults() {
   const results = document.getElementById('quiz-results');
   results.style.display = 'block';
 
-  // Score every bean against the user's answers
   const scored = BEANS.map(b => {
     let score = 0;
     const reasons = [];
 
     quizState.answers.forEach(a => {
-      // Acidity preference
       if (a.acidity === 'high' && b.acidity >= 4) { score += 3; reasons.push('bright acidity you want'); }
       if (a.acidity === 'low' && b.acidity <= 2) { score += 3; reasons.push('mellow acidity you want'); }
       if (a.acidity === 'mid' && b.acidity === 3) { score += 2; }
 
-      // Body preference
       if (a.body === 'high' && b.body >= 4) { score += 3; reasons.push('full body you prefer'); }
       if (a.body === 'low' && b.body <= 2) { score += 3; reasons.push('lighter body you prefer'); }
       if (a.body === 'mid' && b.body === 3) { score += 2; }
 
-      // Tasting notes
       if (a.notes) {
         const matches = (b.notes || []).filter(n =>
           a.notes.some(target => n.toLowerCase().includes(target.toLowerCase()))
@@ -332,7 +271,6 @@ function showQuizResults() {
         }
       }
 
-      // Roast level
       if (a.roast && Array.isArray(a.roast) && a.roast.includes(b.roast)) {
         score += 4;
         reasons.push(`${b.roast.toLowerCase()} roast fits you`);
@@ -363,7 +301,6 @@ function showQuizResults() {
         </div>
         <div class="result-actions">
           <a href="${s.bean.url}" target="_blank" rel="noopener" class="btn-buy">Buy ↗</a>
-          <button class="btn-sm" onclick="showSimilar('${s.bean.id}')">See similar</button>
         </div>
       </div>
     `).join('')}
